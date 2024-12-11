@@ -7,6 +7,8 @@ void promptTransfer() {
     std::string description;
     float amount;
 
+    std::cout << "[ Transfer ]" << std::endl;
+
     // Receiver's ID
     std::cout << "(1/4) Receiver's ID: ";
     std::getline(std::cin, receiverID);

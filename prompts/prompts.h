@@ -2,5 +2,6 @@
 #define PROMPTS_H
 
 void promptCreateAccount();
+void promptTransfer();
 
 #endif

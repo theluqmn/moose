@@ -7,6 +7,8 @@ void promptCreateAccount() {
     std::string accountPassword;
     int accountID;
 
+    std::cout << "[ Create account ]" << std::endl;
+
     // Account owner's name
     std::cout << "(1/3) Account owner's name: ";
     std::getline(std::cin, accountName);
