@@ -3,5 +3,6 @@
 
 void promptCreateAccount();
 void promptTransfer();
+void promptHelp();
 
 #endif

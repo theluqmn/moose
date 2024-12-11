@@ -19,6 +19,8 @@ int main() {
         clearScreen();
         if (input == "quit") {
             break;
+        } else if (input == "help") {
+            promptHelp();
         } else if (input == "create account") {
             promptCreateAccount();
         } else if (input == "transfer") {
