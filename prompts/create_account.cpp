@@ -26,6 +26,7 @@ void promptCreateAccount() {
     std::getline(std::cin, confirmation);
     std::cout << std::endl;
 
+    // Execute account creation
     if (confirmation == "y") {
         createAccount(accountName, accountPassword);
         std::cout << "Account created successfully!" << std::endl;
