@@ -16,6 +16,7 @@ void promptTransfer() {
     // Amount to transfer
     std::cout << "(2/4) Amount to transfer: ";
     std::cin >> amount;
+    std::cin.ignore();
 
     // Transfer description
     std::cout << "(3/4) Transfer description: ";
@@ -25,6 +26,8 @@ void promptTransfer() {
     std::cout << "(4/4) Verify transfer information:" << std::endl;
     std::cout << "- Receiver's ID: " << receiverID << std::endl;
     std::cout << "- Amount: " << amount << std::endl;
+    std::cout << "- Description: " << std::endl;
+    std::cout << description << std::endl;
     std::cout << std::endl;
 
     std::cout << "Is this information correct? (y/n): ";
