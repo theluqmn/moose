@@ -15,6 +15,7 @@ int main() {
 
     printPayment();
     promptCreateAccount();
+    createAccount("John Doe", "password123"); // Using a smaller account ID
 
     return 0;
 }

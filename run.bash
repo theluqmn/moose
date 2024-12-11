@@ -7,7 +7,7 @@ echo "Found ${#cpp_files[@]} C++ files"
 
 echo "(2/3) Compiling..."
 compile_time_start=$(date +%s.%N)
-g++ -o main ${cpp_files[@]}
+g++ -o main ${cpp_files[@]} -lsqlite3
 compile_time_end=$(date +%s.%N)
 compile_time=$(echo "$compile_time_end - $compile_time_start" | bc)
 echo "Compilation took $compile_time seconds"
