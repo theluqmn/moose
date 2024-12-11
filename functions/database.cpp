@@ -13,7 +13,7 @@ sqlite3* initAccountsDB() {
     }
 
     // Create the accounts table
-    std::string accounts_sql = "CREATE TABLE IF NOT EXISTS accounts (account_id INTEGER PRIMARY KEY, account_name TEXT, account_password TEXT);";
+    std::string accounts_sql = "CREATE TABLE IF NOT EXISTS accounts (account_id INTEGER PRIMARY KEY, account_name TEXT, account_password TEXT, balance FLOAT);";
     res = sqlite3_exec(db, accounts_sql.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
         std::cerr << "Error creating table: " << sqlite3_errmsg(db) << std::endl;

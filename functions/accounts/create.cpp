@@ -40,7 +40,7 @@ int createAccount(std::string accountName, std::string accountPassword) {
     }
 
     // Insert the account into the database
-    std::string sql = "INSERT INTO accounts (account_name, account_password, account_id) VALUES ('" + accountName + "', '" + accountPassword + "', " + std::to_string(accountID) + ");";
+    std::string sql = "INSERT INTO accounts (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + std::to_string(accountID) + ", 0);";
     int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
         std::cerr << "Error creating account: " << sqlite3_errmsg(db) << std::endl;
