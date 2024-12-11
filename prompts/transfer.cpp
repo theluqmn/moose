@@ -30,7 +30,6 @@ void promptTransfer() {
     std::cout << "Is this information correct? (y/n): ";
     std::string confirmation;
     std::getline(std::cin, confirmation);
-    std::cout << std::endl;
 
     // Execute transfer
     if (confirmation == "y") {
