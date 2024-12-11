@@ -2,6 +2,7 @@
 #include <string>
 
 #include "functions/payment.h"
+#include "functions/accounts/accounts.h"
 
 int main() {
     std::cout << "Hello! says the machine" << std::endl;
@@ -13,6 +14,7 @@ int main() {
     std::cout << "Hello " << name << "!" << std::endl;
 
     printPayment();
+    createAccount();
 
     return 0;
 }
