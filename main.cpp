@@ -18,6 +18,7 @@ int main() {
         
         clearScreen();
         if (input == "quit") {
+            std::cout << "till we meet again." << std::endl;
             break;
         } else if (input == "help") {
             promptHelp();
