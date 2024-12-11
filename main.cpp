@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "functions/accounts/accounts.h"
+#include "prompts/prompts.h"
 
 int main() {
     std::cout << "Hello! says the machine" << std::endl;
