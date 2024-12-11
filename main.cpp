@@ -14,7 +14,7 @@ int main() {
     std::cout << "Hello " << name << "!" << std::endl;
 
     printPayment();
-    createAccount();
+    promptCreateAccount();
 
     return 0;
 }
