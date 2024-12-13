@@ -7,7 +7,7 @@ using namespace std;
 sqlite3* initAccountsDB() {
     // Open the database
     sqlite3 *db;
-    int res = sqlite3_open("accounts.db", &db);
+    int res = sqlite3_open("database/accounts.db", &db);
     if (res != SQLITE_OK) {
         cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
@@ -29,7 +29,7 @@ sqlite3* initAccountsDB() {
 sqlite3* initTransactionsDB() {
     // Open the database
     sqlite3 *db;
-    int res = sqlite3_open("transactions.db", &db);
+    int res = sqlite3_open("database/transactions.db", &db);
     if (res != SQLITE_OK) {
         cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
