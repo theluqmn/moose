@@ -10,7 +10,7 @@ int createAccount(string accountName, string accountPassword) {
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
-        return 1;
+        return -1;
     }
 
     // Generate a random account ID
@@ -25,7 +25,7 @@ int createAccount(string accountName, string accountPassword) {
         if (rc != SQLITE_OK) {
             cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
             sqlite3_close(db);
-            return 1;
+            return -1;
         }
 
         rc = sqlite3_step(stmt);
@@ -47,9 +47,9 @@ int createAccount(string accountName, string accountPassword) {
     if (res != SQLITE_OK) {
         cerr << "Error creating account: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
-        return 1;
+        return -1;
     }
 
     sqlite3_close(db);
-    return 0;
+    return accountID;  // Return the generated account ID on success
 }
