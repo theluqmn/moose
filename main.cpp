@@ -4,21 +4,23 @@
 #include "prompts/prompts.h"
 #include "functions/functions.h"
 
-int main() {
-    std::cout << "Hello! says the machine" << std::endl;
-    std::cout << "MOOSE - simple bank management system" << std::endl;
-    std::cout << "https://github.com/theluqmn/moose" << std::endl;
-    std::cout << std::endl;
-    std::cout << "'quit' to exit | 'help' to open help" << std::endl;
+using namespace std;
 
-    std::string input;
+int main() {
+    cout << "Hello! says the machine" << endl;
+    cout << "MOOSE - simple bank management system" << endl;
+    cout << "https://github.com/theluqmn/moose" << endl;
+    cout << endl;
+    cout << "'quit' to exit | 'help' to open help" << endl;
+
+    string input;
     while (true) {
-        std::cout << "> ";
-        std::getline(std::cin, input);
+        cout << "> ";
+        getline(cin, input);
         
         clearScreen();
         if (input == "quit") {
-            std::cout << "till we meet again." << std::endl;
+            cout << "till we meet again." << endl;
             break;
         } else if (input == "help") {
             promptHelp();
@@ -27,7 +29,7 @@ int main() {
         } else if (input == "transfer") {
             promptTransfer();
         } else {
-            std::cout << "Invalid input" << std::endl;
+            cout << "Invalid input" << endl;
         }
     }
 

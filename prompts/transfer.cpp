@@ -1,43 +1,45 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 void promptTransfer() {
-    std::string senderID;
-    std::string receiverID;
-    std::string description;
+    string senderID;
+    string receiverID;
+    string description;
     float amount;
 
-    std::cout << "[ Transfer ]" << std::endl;
+    cout << "[ Transfer ]" << endl;
 
     // Receiver's ID
-    std::cout << "(1/4) Receiver's ID: ";
-    std::getline(std::cin, receiverID);
+    cout << "(1/4) Receiver's ID: ";
+    getline(cin, receiverID);
 
     // Amount to transfer
-    std::cout << "(2/4) Amount to transfer: ";
-    std::cin >> amount;
-    std::cin.ignore();
+    cout << "(2/4) Amount to transfer: ";
+    cin >> amount;
+    cin.ignore();
 
     // Transfer description
-    std::cout << "(3/4) Transfer description: ";
-    std::getline(std::cin, description);
+    cout << "(3/4) Transfer description: ";
+    getline(cin, description);
 
     // Verify transfer information
-    std::cout << "(4/4) Verify transfer information:" << std::endl;
-    std::cout << "- Receiver's ID: " << receiverID << std::endl;
-    std::cout << "- Amount: " << amount << std::endl;
-    std::cout << "- Description: " << std::endl;
-    std::cout << description << std::endl;
-    std::cout << std::endl;
+    cout << "(4/4) Verify transfer information:" << endl;
+    cout << "- Receiver's ID: " << receiverID << endl;
+    cout << "- Amount: " << amount << endl;
+    cout << "- Description: " << endl;
+    cout << description << endl;
+    cout << endl;
 
-    std::cout << "Is this information correct? (y/n): ";
-    std::string confirmation;
-    std::getline(std::cin, confirmation);
+    cout << "Is this information correct? (y/n): ";
+    string confirmation;
+    getline(cin, confirmation);
 
     // Execute transfer
     if (confirmation == "y") {
-        std::cout << "Transfer successful!" << std::endl;
+        cout << "Transfer successful!" << endl;
     } else {
-        std::cout << "Transfer aborted" << std::endl;
+        cout << "Transfer aborted" << endl;
     }
 }

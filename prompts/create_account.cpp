@@ -2,36 +2,38 @@
 #include <string>
 #include "../functions/accounts/accounts.h"
 
+using namespace std;
+
 void promptCreateAccount() {
-    std::string accountName;
-    std::string accountPassword;
+    string accountName;
+    string accountPassword;
     int accountID;
 
-    std::cout << "[ Create account ]" << std::endl;
+    cout << "[ Create account ]" << endl;
 
     // Account owner's name
-    std::cout << "(1/3) Account owner's name: ";
-    std::getline(std::cin, accountName);
+    cout << "(1/3) Account owner's name: ";
+    getline(cin, accountName);
 
     // Password
-    std::cout << "(2/3) Password: ";
-    std::getline(std::cin, accountPassword);
+    cout << "(2/3) Password: ";
+    getline(cin, accountPassword);
 
     // Verify account information
-    std::cout << "(3/3) Verify account information:" << std::endl;
-    std::cout << "- Account owner's name: " << accountName << std::endl;
-    std::cout << "- Password: " << accountPassword << std::endl;
-    std::cout << std::endl;
+    cout << "(3/3) Verify account information:" << endl;
+    cout << "- Account owner's name: " << accountName << endl;
+    cout << "- Password: " << accountPassword << endl;
+    cout << endl;
 
-    std::cout << "Is this information correct? (y/n): ";
-    std::string confirmation;
-    std::getline(std::cin, confirmation);
+    cout << "Is this information correct? (y/n): ";
+    string confirmation;
+    getline(cin, confirmation);
 
     // Execute account creation
     if (confirmation == "y") {
         createAccount(accountName, accountPassword);
-        std::cout << "Account created successfully!" << std::endl;
+        cout << "Account created successfully!" << endl;
     } else {
-        std::cout << "Account creation process aborted" << std::endl;
+        cout << "Account creation process aborted" << endl;
     }
 }

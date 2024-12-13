@@ -4,7 +4,9 @@
 
 #include "../functions.h"
 
-int createAccount(std::string accountName, std::string accountPassword) {
+using namespace std;
+
+int createAccount(string accountName, string accountPassword) {
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
@@ -16,12 +18,12 @@ int createAccount(std::string accountName, std::string accountPassword) {
     // Check if account ID already exists
     bool idExists = true;
     while (idExists) {
-        std::string checkSql = "SELECT COUNT(*) FROM accounts WHERE account_id = " + std::to_string(accountID) + ";";
+        string checkSql = "SELECT COUNT(*) FROM accounts WHERE account_id = " + to_string(accountID) + ";";
         sqlite3_stmt *stmt;
         int rc = sqlite3_prepare_v2(db, checkSql.c_str(), -1, &stmt, nullptr);
         
         if (rc != SQLITE_OK) {
-            std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
+            cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
             sqlite3_close(db);
             return 1;
         }
@@ -40,10 +42,10 @@ int createAccount(std::string accountName, std::string accountPassword) {
     }
 
     // Insert the account into the database
-    std::string sql = "INSERT INTO accounts (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + std::to_string(accountID) + ", 0);";
+    string sql = "INSERT INTO accounts (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
     int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
-        std::cerr << "Error creating account: " << sqlite3_errmsg(db) << std::endl;
+        cerr << "Error creating account: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
         return 1;
     }
