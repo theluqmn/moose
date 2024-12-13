@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void promptCreateAccount() {
+void promptOpenAccount() {
     string accountName;
     string accountPassword;
     int accountID;
