@@ -9,11 +9,23 @@ Moose is a simple bank management system written in C++. It includes basic funct
 
 ## Features
 
-- [x] Create accounts
-- [x] Transfer money to other accounts (not implemented in logic but the prompt is there)
-- [ ] Fetch transaction history
-- [ ] Account overview
-- [ ] Payment interface (for stores)
+- [ ] Accounts
+  - [x] Opening acccounts
+  - [ ] Closing accounts
+  - [ ] Update information
+  - [ ] Account overview
+- [ ] Transactions
+  - [ ] Deposits
+  - [ ] Withdrawals
+  - [ ] Fund transfer (between accounts)
+  - [ ] Payment interface
+  - [ ] Fetch transaction history
+- [ ] Security
+  - [ ] Session token
+  - [ ] Password hashing and salting
+- [ ] API
+  - [ ] User API
+  - [ ] Developer API
 
 Other than banking-related features, this project also has a bash script (`run.bash`) that simplifies the compilation process.
 
