@@ -9,8 +9,10 @@ Moose is a simple bank management system written in C++. It includes basic funct
 
 ## Features
 
+Below are the features planned for this project. Everything needs to be implemented before I consider this project complete. Rate of progress is roughly a feature per day.
+
 - [ ] Accounts
-  - [x] Opening acccounts
+  - [x] Opening acccounts - 11/12/2024
   - [ ] Closing accounts
   - [ ] Update information
   - [ ] Account overview
@@ -27,9 +29,10 @@ Moose is a simple bank management system written in C++. It includes basic funct
   - [ ] User API
   - [ ] Developer API
 
-Other than banking-related features, this project also has a bash script (`run.bash`) that simplifies the compilation process.
+> [!NOTE]
+> All the features listed above includes a terminal interface which I use for testing purposes.
 
-All the features above has to be implemented in order to consider this project "done". I am interested in further developing this project, but as always, only time will tell.
+Other than banking-related features, this project also has a bash script (`run.bash`) that simplifies the compilation process.
 
 ## Installation
 

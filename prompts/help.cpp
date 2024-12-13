@@ -6,7 +6,7 @@ void promptHelp() {
     cout << "[ Help ]" << endl;
     cout << "Commands:" << endl;
     cout << "- quit           - exit the program" << endl;
-    cout << "- create account - create a new account" << endl;
+    cout << "- account open   - open a new account" << endl;
     cout << "- transfer       - transfer money between accounts" << endl;
     cout << "- help           - opens this help menu" << endl;
     cout << endl;

@@ -24,8 +24,8 @@ int main() {
             break;
         } else if (input == "help") {
             promptHelp();
-        } else if (input == "create account") {
-            promptCreateAccount();
+        } else if (input == "account open") {
+            promptOpenAccount();
         } else if (input == "transfer") {
             promptTransfer();
         } else {

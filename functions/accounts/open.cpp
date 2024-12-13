@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int createAccount(string accountName, string accountPassword) {
+int openAccount(string accountName, string accountPassword) {
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
@@ -45,7 +45,7 @@ int createAccount(string accountName, string accountPassword) {
     string sql = "INSERT INTO accounts (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
     int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
-        cerr << "Error creating account: " << sqlite3_errmsg(db) << endl;
+        cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
         return -1;
     }

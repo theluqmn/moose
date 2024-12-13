@@ -31,7 +31,7 @@ void promptCreateAccount() {
 
     // Execute account creation
     if (confirmation == "y") {
-        accountID = createAccount(accountName, accountPassword);
+        accountID = openAccount(accountName, accountPassword);
 
         cout << "Account created successfully!" << endl;
         cout << "ID: " << accountID << endl;
