@@ -45,4 +45,19 @@ void promptOpenAccount() {
     string accountPassword;
     string accountType;
     int accountID;
+
+    cout << "[ Create Account ]" << endl;
+    cout << "Available account types:" << endl;
+    cout << "- current      - Current account" << endl;
+
+    // Account type
+    cout << "(1/4) Account type: ";
+
+    // Account owner name
+    cout << "(2/4) Owner's name: ";
+    getline(cin, accountName);
+
+    // Password
+
+    // Verify account info
 }
