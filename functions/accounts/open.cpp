@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int openAccount(string accountName, string accountPassword) {
+int openAccount(string accountType, string accountName, string accountPassword) {
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
@@ -18,7 +18,7 @@ int openAccount(string accountName, string accountPassword) {
     // Check if account ID already exists
     bool idExists = true;
     while (idExists) {
-        string checkSql = "SELECT COUNT(*) FROM accounts WHERE account_id = " + to_string(accountID) + ";";
+        string checkSql = "SELECT COUNT(*) FROM current WHERE account_id = " + to_string(accountID) + ";";
         sqlite3_stmt *stmt;
         int rc = sqlite3_prepare_v2(db, checkSql.c_str(), -1, &stmt, nullptr);
         
@@ -42,7 +42,7 @@ int openAccount(string accountName, string accountPassword) {
     }
 
     // Insert the account into the database
-    string sql = "INSERT INTO accounts (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
+    string sql = "INSERT INTO current (account_name, account_password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
     int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
         cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
