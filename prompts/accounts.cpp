@@ -52,12 +52,33 @@ void promptOpenAccount() {
 
     // Account type
     cout << "(1/4) Account type: ";
+    getline(cin, accountType);
 
     // Account owner name
     cout << "(2/4) Owner's name: ";
     getline(cin, accountName);
 
     // Password
+    cout << "(3/4) Password: ";
+    getline(cin, accountPassword);
 
     // Verify account info
+    cout << "(4/4) Verify account information:" << endl;
+    cout << "- Account type: " << accountType << endl;
+    cout << "- Account owner's name: " << accountName << endl;
+    cout << "- Password: " << accountPassword << endl;
+    cout << endl;
+
+    string confirmation;
+    cout << "Is this information correct? (y/n): ";
+    getline(cin, confirmation);
+
+    // Execute account creation
+    if (confirmation == "y") {
+        accountID = openAccount(accountType, accountName, accountPassword);
+        cout << "Account created successfully!" << endl;
+        cout << "ID: " << accountID << endl;
+    } else {
+        cout << "Aborted process" << endl;
+    }
 }
