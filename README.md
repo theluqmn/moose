@@ -13,7 +13,7 @@ Below are the features planned for this project. Everything needs to be implemen
 
 - [ ] Accounts
   - [x] Opening acccounts - 15/12/2024
-  - [ ] Closing accounts
+  - [x] Closing accounts - 17/12/2024
   - [ ] Update information
   - [ ] Account overview
 - [ ] Transactions
@@ -46,6 +46,10 @@ Run the program and follow the prompts.
 
 - Use `help` to get a list of available commands
 - Run `quit` to exit the program
+
+## Known Issues
+
+- accountExists() function does not work properly, returns 0 even though the account exists. The function also does not check for account type.
 
 ## Stack
 
