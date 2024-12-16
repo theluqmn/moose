@@ -12,6 +12,7 @@ int accountExists(int accountID) {
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
+        cerr << "Failed to open database" << endl;
         return -1;
     }
 
@@ -32,15 +33,16 @@ int accountExists(int accountID) {
         if (rc == SQLITE_ROW) {
             int count = sqlite3_column_int(stmt, 0);
             if (count == 0) {
-                idExists = false;
+                idExists = 0;
             } else {
-                idExists = true;
+                idExists = 1;
             }
         }
         
         sqlite3_finalize(stmt);
     }
 
+    sqlite3_close(db);
     return idExists;
 }
 
@@ -74,4 +76,6 @@ string accountPassword(string accountType, int accountID) {
             sqlite3_finalize(stmt);
         }
     }
+
+    sqlite3_close(db);
 }
