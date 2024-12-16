@@ -6,8 +6,8 @@
 
 using namespace std;
 
-int accountExists(int accountID) {
-    bool idExists = true;
+int accountExists(int accountID) { // Seems to have a bug that returns 0 when the account ID exists
+    int idExists = 0;
 
     // Open the database
     sqlite3 *db = initAccountsDB();
