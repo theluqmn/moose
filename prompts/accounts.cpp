@@ -71,4 +71,16 @@ void promptCloseAccount() {
     string confirmation;
     cout << "Proceed with closing? (y/n): ";
     getline(cin, confirmation);
+
+    // Execute account deletion
+    if (confirmation == "y") {
+        int result = closeAccount(accountID, accountPassword);
+        if (result == 1) {
+            cout << "Account closed successfully!" << endl;
+        } else {
+            cout << "Account not found" << endl;
+        }
+    } else {
+        cout << "Aborted process" << endl;
+    }
 }

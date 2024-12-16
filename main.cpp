@@ -26,6 +26,8 @@ int main() {
             promptHelp();
         } else if (input == "account open") {
             promptOpenAccount();
+        } else if (input == "account close") {
+            promptCloseAccount();
         } else if (input == "transfer") {
             promptTransfer();
         } else {

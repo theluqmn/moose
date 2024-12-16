@@ -78,4 +78,5 @@ string accountPassword(string accountType, int accountID) {
     }
 
     sqlite3_close(db);
+    return "";
 }
