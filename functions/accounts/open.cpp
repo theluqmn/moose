@@ -7,6 +7,12 @@
 using namespace std;
 
 int openAccount(string accountType, string accountName, string accountPassword) {
+    // Check if account type is valid
+    if (accountType != "checking" && accountType != "savings") {
+        cerr << "Invalid account type" << endl;
+        return -1;
+    }
+
     // Open the database
     sqlite3 *db = initAccountsDB();
     if (db == nullptr) {
@@ -18,7 +24,7 @@ int openAccount(string accountType, string accountName, string accountPassword) 
     // Check if account ID already exists
     bool idExists = true;
     while (idExists) {
-        string checkSql = "SELECT COUNT(*) FROM current WHERE account_id = " + to_string(accountID) + ";";
+        string checkSql = "SELECT COUNT(*) FROM "+ accountType + " WHERE account_id = " + to_string(accountID) + ";";
         sqlite3_stmt *stmt;
         int rc = sqlite3_prepare_v2(db, checkSql.c_str(), -1, &stmt, nullptr);
         
@@ -41,27 +47,12 @@ int openAccount(string accountType, string accountName, string accountPassword) 
         sqlite3_finalize(stmt);
     }
 
-    if (accountType == "checking") {
-        // Insert the account into the database
-        string sql = "INSERT INTO checking (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
-        int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
+    // Insert the account into the database
+    string sql = "INSERT INTO " + accountType +" (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
+    int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
 
-        if (res != SQLITE_OK) {
-            cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
-            sqlite3_close(db);
-            return -1;
-        }
-    } else if (accountType == "savings") {
-        // Insert the account into the database
-        string sql = "INSERT INTO savings (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
-        int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
-
-        if (res != SQLITE_OK) {
-            cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
-            sqlite3_close(db);
-            return -1;
-    } else {
-        cerr << "Invalid account type" << endl;
+    if (res != SQLITE_OK) {
+        cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
         return -1;
     }

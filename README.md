@@ -5,7 +5,7 @@
 Moose is a simple bank management system written in C++. It includes basic functionalities such as creating accounts, depositing and withdrawing money, balance checking, transaction history, transferring money, and a simple payment interface. Uses SQLite3 for data storage.
 
 > [!WARNING]
-> This project is still in **active** development. Currently working on a major overhaul since I started out wrong.
+> This project is still in **active** development.
 
 ## Features
 
@@ -14,6 +14,7 @@ Below are the features planned for this project. Everything needs to be implemen
 - [ ] Accounts
   - [x] Opening acccounts - 15/12/2024
   - [x] Closing accounts - 17/12/2024
+  - [ ] Interest rates
   - [ ] Update information
   - [ ] Account overview
 - [ ] Transactions
