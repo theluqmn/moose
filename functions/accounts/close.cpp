@@ -28,7 +28,4 @@ int closeAccount(int accountID, string accountPassword) {
     cout << "Account " << accountID << " has been successfully closed." << endl;
     sqlite3_close(db);
     return 1;
-
-    cout << "Account does not exist." << endl;
-    return 0;
 }
