@@ -17,6 +17,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] Interest rates
   - [ ] Update information
   - [ ] Account overview
+  - [ ] Find, get and list accounts
 - [ ] Transactions
   - [x] Deposits - 18/12/2024
   - [ ] Withdrawals
@@ -27,6 +28,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] Session token
   - [ ] Password hashing and salting
 - [ ] API
+  - [ ] REST setup
   - [ ] User API
   - [ ] Developer API
 
