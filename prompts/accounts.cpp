@@ -12,7 +12,8 @@ void promptOpenAccount() {
 
     cout << "[ Create Account ]" << endl;
     cout << "Available account types:" << endl;
-    cout << "- current      - Current account" << endl;
+    cout << "- checking      - For everyday use" << endl;
+    cout << "- savings       - For saving money" << endl;
     cout << endl;
 
     // Account type

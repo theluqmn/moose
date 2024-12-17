@@ -41,15 +41,25 @@ int openAccount(string accountType, string accountName, string accountPassword) 
         sqlite3_finalize(stmt);
     }
 
-    if (accountType == "current") {
+    if (accountType == "checking") {
         // Insert the account into the database
-        string sql = "INSERT INTO current (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
+        string sql = "INSERT INTO checking (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
         int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
+
         if (res != SQLITE_OK) {
             cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
             sqlite3_close(db);
             return -1;
         }
+    } else if (accountType == "savings") {
+        // Insert the account into the database
+        string sql = "INSERT INTO savings (name, password, account_id, balance) VALUES ('" + accountName + "', '" + accountPassword + "', " + to_string(accountID) + ", 0);";
+        int res = sqlite3_exec(db, sql.c_str(), NULL, NULL, NULL);
+
+        if (res != SQLITE_OK) {
+            cerr << "Error opening account: " << sqlite3_errmsg(db) << endl;
+            sqlite3_close(db);
+            return -1;
     } else {
         cerr << "Invalid account type" << endl;
         sqlite3_close(db);

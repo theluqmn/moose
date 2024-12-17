@@ -14,9 +14,18 @@ sqlite3* initAccountsDB() {
         return nullptr;
     }
 
-    // Create the current accounts table
-    string current_accounts_table = "CREATE TABLE IF NOT EXISTS current (account_id INTEGER PRIMARY KEY, name TEXT, password TEXT, balance FLOAT);";
-    res = sqlite3_exec(db, current_accounts_table.c_str(), NULL, NULL, NULL);
+    // Create the checking accounts table
+    string checking_accounts_table = "CREATE TABLE IF NOT EXISTS checking (account_id INTEGER PRIMARY KEY, name TEXT, password TEXT, balance FLOAT);";
+    res = sqlite3_exec(db, checking_accounts_table.c_str(), NULL, NULL, NULL);
+    if (res != SQLITE_OK) {
+        cerr << "Error creating table: " << sqlite3_errmsg(db) << endl;
+        sqlite3_close(db);
+        return nullptr;
+    }
+
+    // Create the savings accounts table
+    string savings_accounts_table = "CREATE TABLE IF NOT EXISTS savings (account_id INTEGER PRIMARY KEY, name TEXT, password TEXT, balance FLOAT);";
+    res = sqlite3_exec(db, savings_accounts_table.c_str(), NULL, NULL, NULL);
     if (res != SQLITE_OK) {
         cerr << "Error creating table: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
