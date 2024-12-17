@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "../functions/accounts/accounts.h"
+#include "../functions/transactions/transactions.h"
 
 using namespace std;
 
@@ -44,9 +46,45 @@ void promptTransfer() {
     }
 }
 
-void promptFundTransfer() {
-    string senderID;
-    string receiverID;
-    string description;
+void promptFundDeposit() {
+    string accountType;
+    int accountID;
     float amount;
+
+    cout << "[ Deposit ]" << endl;
+
+    cout << "(1/3) Account type: ";
+    getline(cin, accountType);
+
+    cout << "(2/3) Account ID: ";
+    string accountIDInput;
+    getline(cin, accountIDInput);
+    accountID = stoi(accountIDInput);
+
+    cout << "(3/3) Amount: ";
+    string amountInput;
+    getline(cin, amountInput);
+    amount = stof(amountInput);
+
+    cout << "(4/4) Verify deposit details:" << endl;
+    cout << "- Account type: " << accountType << endl;
+    cout << "- Account ID: " << accountID << endl;
+    cout << "- Amount: " << amount << endl;
+    cout << endl;
+
+    cout << "Is this information correct? (y/n): ";
+    string confirmation;
+    getline(cin, confirmation);
+
+    // Execute transfer
+    if (confirmation == "y") {
+        int result = fundsDeposit(accountType, accountID, amount);
+        if (result == 1) {
+            cout << "Deposit successful!" << endl;
+        } else {
+            cout << "An error occured" << endl;
+        }
+    } else {
+        cout << "Deposit aborted" << endl;
+    }
 }

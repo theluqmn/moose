@@ -3,7 +3,10 @@
 
 void promptOpenAccount();
 void promptCloseAccount();
+
 void promptTransfer();
+void promptFundDeposit();
+
 void promptHelp();
 
 #endif

@@ -14,6 +14,7 @@ int main() {
     cout << "'quit' to exit | 'help' to open help" << endl;
 
     string input;
+    
     while (true) {
         cout << "> ";
         getline(cin, input);
@@ -28,7 +29,9 @@ int main() {
             promptOpenAccount();
         } else if (input == "account close") {
             promptCloseAccount();
-        } else if (input == "transfer") {
+        } else if (input == "funds deposit") {
+            promptFundDeposit();
+        } else if (input == "funds transfer") {
             promptTransfer();
         } else {
             cout << "Invalid input" << endl;

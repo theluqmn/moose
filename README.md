@@ -18,7 +18,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] Update information
   - [ ] Account overview
 - [ ] Transactions
-  - [ ] Deposits
+  - [x] Deposits - 18/12/2024
   - [ ] Withdrawals
   - [ ] Fund transfer (between accounts)
   - [ ] Payment interface
