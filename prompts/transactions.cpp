@@ -120,7 +120,7 @@ void promptFundsWithdraw() {
     getline(cin, confirmation);
     // Execute transfer
     if (confirmation == "y") {
-        int result = 1;
+        int result = fundsWithdraw(accountType, accountID, amount);
         if (result == 1) {
             cout << "Withdrawal successful!" << endl;
         } else {
