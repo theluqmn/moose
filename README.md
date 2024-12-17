@@ -20,7 +20,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] Find, get and list accounts
 - [ ] Transactions
   - [x] Deposits - 18/12/2024
-  - [ ] Withdrawals
+  - [x] Withdrawals - 18/12/2024
   - [ ] Fund transfer (between accounts)
   - [ ] Payment interface
   - [ ] Fetch transaction history

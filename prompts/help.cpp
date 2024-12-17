@@ -9,6 +9,7 @@ void promptHelp() {
     cout << "- account open   - open a new account" << endl;
     cout << "- account close  - close an account" << endl;
     cout << "- funds deposit  - deposit money into an account" << endl;
+    cout << "- funds withdraw - withdraw money from an account" << endl;
     cout << "- funds transfer - transfer money between accounts" << endl;
     cout << "- help           - opens this help menu" << endl;
     cout << endl;
