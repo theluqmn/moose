@@ -43,3 +43,10 @@ void promptTransfer() {
         cout << "Transfer aborted" << endl;
     }
 }
+
+void promptFundTransfer() {
+    string senderID;
+    string receiverID;
+    string description;
+    float amount;
+}
