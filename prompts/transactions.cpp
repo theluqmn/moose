@@ -88,3 +88,45 @@ void promptFundDeposit() {
         cout << "Deposit aborted" << endl;
     }
 }
+
+void promptFundsWithdraw() {
+    string accountType;
+    int accountID;
+    float amount;
+
+    cout << "[ Withdraw ]" << endl;
+
+    cout << "(1/3) Account type: ";
+    getline(cin, accountType);
+
+    cout << "(2/3) Account ID: ";
+    string accountIDInput;
+    getline(cin, accountIDInput);
+    accountID = stoi(accountIDInput);
+
+    cout << "(3/3) Amount: ";
+    string amountInput;
+    getline(cin, amountInput);
+    amount = stof(amountInput);
+
+    cout << "(4/4) Verify withdrawal details:" << endl;
+    cout << "- Account type: " << accountType << endl;
+    cout << "- Account ID: " << accountID << endl;
+    cout << "- Amount: " << amount << endl;
+    cout << endl;
+
+    cout << "Is this information correct? (y/n): ";
+    string confirmation;
+    getline(cin, confirmation);
+    // Execute transfer
+    if (confirmation == "y") {
+        int result = 1;
+        if (result == 1) {
+            cout << "Withdrawal successful!" << endl;
+        } else {
+            cout << "An error occured" << endl;
+        }
+    } else {
+        cout << "Withdrawal aborted" << endl;
+    }
+}
