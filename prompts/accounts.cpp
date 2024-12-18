@@ -51,6 +51,7 @@ void promptOpenAccount() {
 
 void promptCloseAccount() {
     string accountPassword;
+    string accountType = "checking";
     int accountID;
 
     cout << "[ Close Account ]" << endl;
@@ -75,7 +76,6 @@ void promptCloseAccount() {
 
     // Execute account deletion
     if (confirmation == "y") {
-        string accountType = "checking";
         int result = closeAccount(accountType, accountID, accountPassword);
         if (result == 1) {
             cout << "Account closed successfully!" << endl;
