@@ -15,7 +15,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [x] Opening acccounts - 15/12/2024
   - [x] Closing accounts - 17/12/2024
   - [ ] Interest rates
-  - [ ] Update information
+  - [x] Update information - 19/12/2024
   - [ ] Account overview
   - [ ] Find, get and list accounts
 - [ ] Transactions
