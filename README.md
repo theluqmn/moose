@@ -22,7 +22,6 @@ Below are the features planned for this project. Everything needs to be implemen
   - [x] Deposits - 18/12/2024
   - [x] Withdrawals - 18/12/2024
   - [ ] Fund transfer (between accounts)
-  - [ ] Payment interface
   - [ ] Fetch transaction history
 - [ ] Security
   - [ ] Session token
@@ -49,10 +48,6 @@ Run the program and follow the prompts.
 
 - Use `help` to get a list of available commands
 - Run `quit` to exit the program
-
-## Known Issues
-
-- accountExists() function does not work properly, returns 0 even though the account exists. The function also does not check for account type.
 
 ## Stack
 
