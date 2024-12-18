@@ -8,6 +8,9 @@ sqlite3* initAccountsDB() {
     // Open the database
     sqlite3 *db;
     int res = sqlite3_open("database/accounts.db", &db);
+    char *zErrMsg = 0;
+    sqlite3_exec(db, "PRAGMA foreign_keys = ON;", 0, 0, &zErrMsg);
+    sqlite3_exec(db, "PRAGMA journal_mode = WAL;", 0, 0, &zErrMsg);
     if (res != SQLITE_OK) {
         cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
         sqlite3_close(db);
