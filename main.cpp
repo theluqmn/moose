@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <map>
+#include <cpprest/json.h>
 
 #include "prompts/prompts.h"
 #include "functions/functions.h"
