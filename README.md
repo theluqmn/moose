@@ -39,7 +39,7 @@ Other than banking-related features, this project also has a bash script (`run.b
 ## Installation
 
 1. Clone the repository
-2. Ensure sqlite3 is installed in your system
+2. Ensure `sqlite3`, `cpprest-devel` is installed in your system
 3. Run `bash run.bash` to compile all files and run the program
 
 ## Usage
