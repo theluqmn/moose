@@ -1,3 +1,6 @@
+use prompted::input;
+
 fn main() {
-    println!("Hello, world!");
+    let name: String = input!("Enter your name: ");
+    println!("Hello, {}!", name);
 }
