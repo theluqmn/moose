@@ -38,23 +38,9 @@ Below are the features planned for this project. Everything needs to be implemen
 
 Other than banking-related features, this project also has a bash script (`run.bash`) that simplifies the compilation process.
 
-## Installation
-
-1. Clone the repository
-2. Ensure `sqlite3`, `cpprest-devel` is installed in your system
-3. Run `bash run.bash` to compile all files and run the program
-
-## Usage
-
-Run the program and follow the prompts.
-
-- Use `help` to get a list of available commands
-- Run `quit` to exit the program
-
 ## Stack
 
-- Language: C++
-- Compiler: G++
+- Language: Rust
 - Database: SQLite3
 
 Developed in a Fedora environment I daily drive. Optimised for Linux/Unix.
