@@ -1,5 +1,7 @@
-use actix_web::{get, web, App, HttpServer, HttpResponse, Responder};
+use actix_web::{get, web, HttpResponse, Responder};
 use serde::Deserialize;
+
+use crate::functions::accounts;
 
 #[derive(Deserialize)]
 struct AccountCreate {
@@ -14,6 +16,10 @@ pub async fn accounts_create(query: web::Query<AccountCreate>) -> impl Responder
 
     println!("Name: {}", name);
     println!("Password: {}", password);
+
+    // Create a new database instance
+    let db = accounts::Accounts::init().unwrap();
+    db.open("checking", name, password).unwrap();
 
     HttpResponse::Ok().body("Account created!")
 }

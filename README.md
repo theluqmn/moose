@@ -14,8 +14,8 @@ The original C++ version is available at this [release](https://github.com/TheLu
 Below are the features planned for this project. Everything needs to be implemented before I consider this project complete. Rate of progress varies, as I am working on several projects at once.
 
 - [ ] accounts
-  - [ ] create accounts
-    - [ ] checking
+  - [x] create accounts
+    - [x] checking
     - [ ] savings
   - [ ] update account details
   - [ ] delete accounts

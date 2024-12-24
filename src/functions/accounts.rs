@@ -1,12 +1,12 @@
 use rusqlite::{Connection, Result};
 
-struct Database {
+pub struct Accounts {
     conn: Connection,
 }
 
-impl Database {
+impl Accounts {
     // Initializes the database
-    fn init() -> Result<Self> {
+    pub fn init() -> Result<Self> {
         let conn = Connection::open("accounts.db")?;
 
         conn.execute(
@@ -25,7 +25,7 @@ impl Database {
     }
 
     // Open a new account
-    fn open(&self, variant: &str, name: &str, password: &str) -> Result<()> {
+    pub fn open(&self, variant: &str, name: &str, password: &str) -> Result<()> {
         self.conn.execute(
             &format!("INSERT INTO {} (name, password) VALUES (?, ?)", variant),
             [name, password],
