@@ -1,6 +1,7 @@
 // use prompted::input;
 
-use moose::routes;
+mod routes;
+mod functions;
 use actix_web::{App, HttpServer};
 
 #[actix_web::main]

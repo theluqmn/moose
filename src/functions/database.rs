@@ -6,7 +6,7 @@ pub fn accounts_db() -> Result<()> {
     };
 
     impl Database {
-        // Intializes the database.
+        // Intializes the database
         fn init() -> Result<Self> {
             let conn = Connection::open("accounts.db")?;
 
@@ -24,6 +24,15 @@ pub fn accounts_db() -> Result<()> {
 
             Ok(Self {conn})
         }
+
+        // Open a new account
+        fn open(&self, variant: &str, name: &str, password: &str) -> Result<()> {
+            self.conn.execute(
+                format!("INSERT INTO {} (name, password) VALUES (?, ?)", variant),
+                [name, password],
+            );
+        }
+
     }
 
     // Open the connection
