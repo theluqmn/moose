@@ -14,7 +14,7 @@ void promptOpenAccount() {
     cout << "Available account types:" << endl;
     cout << "- checking      - For everyday use" << endl;
     cout << "- savings       - For saving money" << endl;
-    cout << endl;
+    cout << "\n";
 
     // Account type
     cout << "(1/4) Account type: ";
@@ -33,7 +33,7 @@ void promptOpenAccount() {
     cout << "- Account type: " << accountType << endl;
     cout << "- Account owner's name: " << accountName << endl;
     cout << "- Password: " << accountPassword << endl;
-    cout << endl;
+    cout << "\n";
 
     string confirmation;
     cout << "Is this information correct? (y/n): ";
@@ -68,7 +68,7 @@ void promptCloseAccount() {
     cout << "- Account ID: " << accountID << endl;
     cout << "- Password: " << accountPassword << endl;
     cout << "WARNING: This action is irreversible" << endl;
-    cout << endl;
+    cout << "\n";
 
     string confirmation;
     cout << "Proceed with closing? (y/n): ";
