@@ -9,11 +9,11 @@ struct AccountCreate {
 
 #[get("/accounts/create")]
 pub async fn accounts_create(query: web::Query<AccountCreate>) -> impl Responder {
-    let name = query.name.as_deref();
-    let password = query.password.as_deref();
+    let name = &query.name; // Directly reference the name
+    let password = &query.password; // Directly reference the password
 
-    println!("{}", name);
-    println!("{}", password);
+    println!("Name: {}", name);
+    println!("Password: {}", password);
 
     HttpResponse::Ok().body("Account created!")
 }
