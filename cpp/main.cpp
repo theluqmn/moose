@@ -14,11 +14,6 @@ int main() {
     cout << "MOOSE - simple bank management system" << endl;
     cout << "https://github.com/theluqmn/moose" << endl;
     cout << endl;
-    
-    try {
-        http_listener listener(U("http://localhost:8080"));
-        
-    }
 
     return 0;
 }
