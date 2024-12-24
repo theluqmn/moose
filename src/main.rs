@@ -1,21 +1,15 @@
 // use prompted::input;
 
-use actix_web::{get, web, App, HttpServer, Responder};
-
-#[get("/")]
-async fn index() -> impl Responder {
-    println!("Route '/' called");
-    "Hello, World!"
-}
+use moose::routes;
+use actix_web::{web, App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
-        App::new().service(index)
-        .service(hello)
+        App::new()
+            .configure(routes::config)
     })
-
-    .bind("127.0.0.1:6969")?
+    .bind("127.0.0.1:8080")?
     .run()
     .await
 }
