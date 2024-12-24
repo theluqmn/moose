@@ -1,7 +1,7 @@
 // use prompted::input;
 
 use moose::routes;
-use actix_web::{web, App, HttpServer};
+use actix_web::{App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -9,7 +9,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .configure(routes::config)
     })
-    .bind("127.0.0.1:8080")?
+
+    .bind("127.0.0.1:6969")?
     .run()
     .await
 }

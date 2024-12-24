@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 prompted = "0.2"
 actix-web = "4.0"
+rusqlite = "0.26"
