@@ -9,7 +9,7 @@ The original C++ version is available at this [release](https://github.com/TheLu
 > [!WARNING]
 > This project is still in **active** development. Currently transitioning from C++ to Rust.
 
-## Features
+## To-do
 
 Below are the features planned for this project. Everything needs to be implemented before I consider this project complete. Rate of progress varies, as I am working on several projects at once.
 
@@ -25,6 +25,12 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] transfer
 - [ ] backend
   - [x] actix-web setup
+  - [ ] sqlite setup
+  - [ ] logging setup
+
+### State of the project
+
+In active development.
 
 ## Stack
 
