@@ -8,3 +8,4 @@ prompted = "0.2"
 actix-web = "4.0"
 rusqlite = "0.26"
 serde ={version="1.0.216", features=["derive"]}
+uuid = { version = "1.2", features = ["v4"] }
