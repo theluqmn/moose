@@ -8,7 +8,7 @@ pub struct Accounts {
 impl Accounts {
     // Initializes the database
     pub fn init() -> Result<Self> {
-        let conn = Connection::open("accounts.db")?;
+        let conn = Connection::open("database/accounts.db")?;
 
         conn.execute(
             "CREATE TABLE IF NOT EXISTS checking (
@@ -25,6 +25,10 @@ impl Accounts {
         Ok(Self { conn })
     }
 
+    // Check if account exists
+
+    // Verify password
+
     // Open a new account
     pub fn open(&self, variant: &str, name: &str, password: &str) -> Result<()> {
         let id = Uuid::new_v4().to_string();
@@ -34,4 +38,8 @@ impl Accounts {
         )?;
         Ok(())
     }
+
+    // Update account details
+
+    // Delete account
 }

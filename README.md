@@ -25,7 +25,7 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] transfer
 - [ ] backend
   - [x] actix-web setup
-  - [ ] sqlite setup
+  - [x] sqlite setup
   - [ ] logging setup
 
 ### State of the project
