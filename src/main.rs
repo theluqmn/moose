@@ -1,15 +1,18 @@
-use prompted::input;
+// use prompted::input;
+use actix_web::{get, web, App, HttpServer, Responder};
 
-fn main() {
-    while let true = true {
-        let command: String = input!("> ");
+#[get("/")]
+async fn index() -> impl Responder {
+    println!("Route '/' called");
+    "Hello, World!"
+}
 
-        if let "quit" = command.as_str() {
-            break;
-        } else if let "help" = command.as_str() {
-            println!("Commands: quit, help");
-        } else {
-            println!("Unknown command: {}", command);
-        }
-    }
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new().service(index)
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
 }
