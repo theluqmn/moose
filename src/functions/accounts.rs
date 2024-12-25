@@ -22,11 +22,42 @@ impl Accounts {
             [],
         )?;
 
+        conn.execute(
+            "CREATE TABLE IF NOT EXISTS savings (
+                id TEXT PRIMARY KEY,
+                name TEXT,
+                balance FLOAT DEFAULT 0.00,
+                password TEXT,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )",
+            [],
+        )?;
+
         Ok(Self { conn })
     }
 
     // Check if account exists
+    pub fn exists(&self, variant: &str, id: &str) -> Result<bool> {
+        // Input validation
+        if !["checking", "savings"].contains(&variant) {
+            return Err(rusqlite::Error::InvalidParameterName(
+                "Invalid account type".to_string(),
+            ));
+        }
 
+        if id.is_empty() {
+            return Err(rusqlite::Error::InvalidParameterName(
+                "Account ID cannot be empty".to_string(),
+            ));
+        }
+        
+        // SQL operation
+        let mut stmt = self.conn.prepare(&format!("SELECT COUNT(*) FROM {} WHERE id = {}", variant, id))?;
+        let count: i32 = stmt.query_row([id], |row| row.get(0))?;
+
+        Ok(count > 0)
+    }
     // Verify password
 
     // Open a new account
@@ -36,6 +67,7 @@ impl Accounts {
             &format!("INSERT INTO {} (id, name, password) VALUES (?, ?, ?)", variant),
             [id, name.to_string(), password.to_string()],
         )?;
+
         Ok(())
     }
 

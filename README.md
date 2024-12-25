@@ -16,7 +16,8 @@ Below are the features planned for this project. Everything needs to be implemen
 - [ ] accounts
   - [x] create accounts
     - [x] checking
-    - [ ] savings
+    - [x] savings
+  - [x] get account details
   - [ ] update account details
   - [ ] delete accounts
 - [ ] transactions
