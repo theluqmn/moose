@@ -39,19 +39,6 @@ impl Accounts {
 
     // Check if account exists
     pub fn exists(&self, variant: &str, id: &str) -> Result<bool> {
-        // Input validation
-        if !["checking", "savings"].contains(&variant) {
-            return Err(rusqlite::Error::InvalidParameterName(
-                "Invalid account type".to_string(),
-            ));
-        }
-
-        if id.is_empty() {
-            return Err(rusqlite::Error::InvalidParameterName(
-                "Account ID cannot be empty".to_string(),
-            ));
-        }
-        
         // SQL operation
         let mut stmt = self.conn.prepare(&format!("SELECT COUNT(*) FROM {} WHERE id = {}", variant, id))?;
         let count: i32 = stmt.query_row([id], |row| row.get(0))?;

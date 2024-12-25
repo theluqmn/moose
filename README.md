@@ -33,10 +33,16 @@ Below are the features planned for this project. Everything needs to be implemen
 
 In active development.
 
-## Stack
+## Development
+
+### Stack
 
 - Language: Rust
 - Framework: Actix Web
 - Database: SQLite3
 
 Developed in a Fedora environment I daily drive. Optimised for Linux/Unix.
+
+### How it works
+
+At the core of the project is a REST API built using Actix Web. All the endpoints are inside the `src/routes` directory. The logic for these endpoints are located inside the `src/functions` directory and are called from the routes. Input validations happen inside the the `src/routes` directory and returns a corresponding HTTP status code.
