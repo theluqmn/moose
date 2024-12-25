@@ -14,10 +14,10 @@ The original C++ version is available at this [release](https://github.com/TheLu
 Below are the features planned for this project. Everything needs to be implemented before I consider this project complete. Rate of progress varies, as I am working on several projects at once.
 
 - [ ] accounts
-  - [x] create accounts
+  - [x] create accounts - 25/12/2024
     - [x] checking
     - [x] savings
-  - [x] get account details
+  - [x] check account exists - 25/12/2024
   - [ ] update account details
   - [ ] delete accounts
 - [ ] transactions
@@ -25,8 +25,8 @@ Below are the features planned for this project. Everything needs to be implemen
   - [ ] withdraw
   - [ ] transfer
 - [ ] backend
-  - [x] actix-web setup
-  - [x] sqlite setup
+  - [x] actix-web setup - 25/12/2024
+  - [x] sqlite setup - 25/12/2024
   - [ ] logging setup
 - [ ] security and authentication
   - [ ] cookies
