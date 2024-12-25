@@ -58,17 +58,19 @@ impl Accounts {
 
         Ok(count > 0)
     }
+
     // Verify password
 
     // Open a new account
-    pub fn open(&self, variant: &str, name: &str, password: &str) -> Result<()> {
+    pub fn open(&self, variant: &str, name: &str, password: &str) -> Result<String> {
         let id = Uuid::new_v4().to_string();
+
         self.conn.execute(
             &format!("INSERT INTO {} (id, name, password) VALUES (?, ?, ?)", variant),
-            [id, name.to_string(), password.to_string()],
+            [id.clone(), name.to_string(), password.to_string()],
         )?;
 
-        Ok(())
+        Ok(id)
     }
 
     // Update account details
