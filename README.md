@@ -28,6 +28,10 @@ Below are the features planned for this project. Everything needs to be implemen
   - [x] actix-web setup
   - [x] sqlite setup
   - [ ] logging setup
+- [ ] security and authentication
+  - [ ] cookies
+  - [ ] session management
+  - [ ] token authentication
 
 ### State of the project
 

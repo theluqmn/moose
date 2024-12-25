@@ -1,4 +1,4 @@
-use actix_web::{get, web, HttpResponse, Responder};
+use actix_web::{post, web, HttpResponse, Responder};
 use serde::Deserialize;
 
 use crate::functions::accounts;
@@ -10,7 +10,7 @@ struct AccountCreate {
     password: String,
 }
 
-#[get("/accounts/create")]
+#[post("/accounts")]
 pub async fn accounts_create(query: web::Query<AccountCreate>) -> impl Responder {
     let variant = &query.variant;
     let name = &query.name;
