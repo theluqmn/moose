@@ -2,7 +2,9 @@
 
 **Designed and developed by** [Luqman](https://theluqmn.github.io/)
 
-Moose is a simple bank management system written in Rust. It includes a REST API for clients to perform various operations such as creating accounts, making transactions, and managing their accounts. Designed to be integrated with various projects and services that may require a backend for managing accounts and transactions. This is also my first Rust project. ORiginally written in C++ and migrated to Rust.
+Moose is a simple bank management system written in Rust. It includes a REST API for clients to perform various operations such as creating accounts, making transactions, and managing their accounts.
+Designed to be integrated with various projects and services that may require a backend for managing accounts and transactions.
+This is also my first Rust project. Originally written in C++ and migrated to Rust.
 
 The original C++ version is available at this [release](https://github.com/TheLuqmn/Moose/releases/tag/v0.1.cpp). Note that it barely works.
 
@@ -10,8 +12,6 @@ The original C++ version is available at this [release](https://github.com/TheLu
 > This project is still in **active** development. Currently transitioning from C++ to Rust.
 
 ## To-do
-
-Below are the features planned for this project. Everything needs to be implemented before I consider this project complete. Rate of progress varies, as I am working on several projects at once.
 
 - [ ] accounts
   - [x] create accounts - 25/12/2024
@@ -35,7 +35,7 @@ Below are the features planned for this project. Everything needs to be implemen
 
 ### State of the project
 
-In active development.
+In active development. Rate of progress varies, as I am also working on [Novelty](https://github.com/theluqmn/novelty) - an economy/currency Discord bot.
 
 ## Development
 
