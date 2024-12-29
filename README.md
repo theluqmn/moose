@@ -9,7 +9,7 @@ This is also my first Rust project. Originally written in C++ and migrated to Ru
 The original C++ version is available at this [release](https://github.com/TheLuqmn/Moose/releases/tag/v0.1.cpp). Note that it barely works.
 
 > [!WARNING]
-> This project is still in **active** development. Currently transitioning from C++ to Rust.
+> This project is still in **active** development.
 
 ## To-do
 
@@ -35,7 +35,7 @@ The original C++ version is available at this [release](https://github.com/TheLu
 
 ### State of the project
 
-In active development. Rate of progress varies, as I am also working on [Novelty](https://github.com/theluqmn/novelty) - an economy/currency Discord bot.
+In active development. Rate of progress varies, as I am also working on other projects for 2024/2025 High Seas.
 
 ## Development
 
