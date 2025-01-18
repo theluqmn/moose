@@ -6,6 +6,7 @@ use actix_web::{App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    println!("Moose\nhttps://github.com/theluqmn/moose\n----");
     HttpServer::new(|| {
         App::new()
             .configure(routes::config)

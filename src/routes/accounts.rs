@@ -39,7 +39,7 @@ pub async fn accounts_create(query: web::Query<AccountCreate>) -> impl Responder
 
     // Create a new database instance
     let db = accounts::Accounts::init().unwrap();
-    let id = match db.open("checking", name, password) {
+    let id = match db.open(variant, name, password) {
         Ok(id) => id,
         Err(e) => return HttpResponse::InternalServerError().body(format!("Failed to create account: {}", e))
     };

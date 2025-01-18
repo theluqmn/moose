@@ -38,13 +38,13 @@ impl Accounts {
     }
 
     // Check if account exists
-    pub fn exists(&self, variant: &str, id: &str) -> Result<bool> {
-        // SQL operation
-        let mut stmt = self.conn.prepare(&format!("SELECT COUNT(*) FROM {} WHERE id = {}", variant, id))?;
-        let count: i32 = stmt.query_row([id], |row| row.get(0))?;
+    // pub fn exists(&self, variant: &str, id: &str) -> Result<bool> {
+    //     // SQL operation
+    //     let mut stmt = self.conn.prepare(&format!("SELECT COUNT(*) FROM {} WHERE id = {}", variant, id))?;
+    //     let count: i32 = stmt.query_row([id], |row| row.get(0))?;
 
-        Ok(count > 0)
-    }
+    //     Ok(count > 0)
+    // }
 
     // Verify password
 
